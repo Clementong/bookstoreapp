@@ -17,7 +17,6 @@ When examining the table schemas, it becomes evident that several rows within th
 
 This entails dividing the table into two distinct entities: 
 - Firstly, a "customer" table, which comprises exclusively unique customer records and using cutomer_id as the primary key.
-<br />
 - Secondly, the remaining rows would be relegated to a separate table (“subscription table”), with only customer_id acting as a foreign key to cutomer_id in the previously mentioned “customer” table.
 
 In doing so, having to change customer information would be much faster as the update operation would be searching a lesser number of rows. Additionally, it can result in better memory management as retrieving product and subscription information would not result in retrieving customer information as well. When customer information is needed, a `join` between the subscription and customer table can be used to retrieve the relevant information. 
