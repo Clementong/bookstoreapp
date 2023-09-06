@@ -26,20 +26,33 @@ Pre-requisites:
 Steps: 
 
 1. Set up database
-    a. Login to posgresql using psql terminal 
-    b. Run ./misc/setup_postgres.sql script in the terminal (Copy and Paste)
+- Login to posgresql using psql terminal 
+- Run ./misc/setup_postgres.sql script in the terminal (Copy and Paste)
 <br/>
 
-2. Run the maven project. 
+2. Update the database configuration in application.properties
+>
+    spring.datasource.url=
+    spring.datasource.username=
+    spring.datasource.password=
+ 
+
+3. Run the maven project. 
 ```
 $ mvn compile
+```
+
+```
 $ mvn package 
+```
+
+```
 $ java -jar target/bookstore-application-0.0.1-SNAPSHOT.jar
 ```
 
 Application Endpoint: http://localhost:8080/
 
-3. Login
+4. Login
 >
     GUI: 
     User: user
@@ -51,8 +64,8 @@ Application Endpoint: http://localhost:8080/
     Password: Search for "Using generated security password:" in logs
 
 ## Clean Up
-a. Login to posgresql using psql terminal 
-b. Run ./misc/cleanup_postgres.sql script in the terminal (Copy and Paste)
+- Login to posgresql using psql terminal 
+- Run ./misc/cleanup_postgres.sql script in the terminal (Copy and Paste)
 
 ## Swagger UI
 http://localhost:8080/swagger-ui/index.html#/
